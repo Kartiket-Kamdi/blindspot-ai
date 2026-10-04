@@ -1,0 +1,47 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile information",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "maxLength": 128 },
+        "email": { "type": "string", "maxLength": 256 },
+        "displayName": { "type": "string", "maxLength": 128 },
+        "photoURL": { "type": "string", "maxLength": 512 },
+        "createdAt": { "type": "string", "maxLength": 64 }
+      },
+      "required": ["uid", "email"]
+    },
+    "Decision": {
+      "title": "Decision",
+      "description": "User analyzed decision with blind spots and reflections",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "userId": { "type": "string", "maxLength": 128 },
+        "title": { "type": "string", "maxLength": 500 },
+        "options": { "type": "string", "maxLength": 1000 },
+        "leaning": { "type": "string", "maxLength": 500 },
+        "leaningReason": { "type": "string", "maxLength": 1500 },
+        "knownFacts": { "type": "string", "maxLength": 2000 },
+        "coreFactors": { "type": "string", "maxLength": 1000 },
+        "constraints": { "type": "string", "maxLength": 1000 },
+        "doubtsAndConcerns": { "type": "string", "maxLength": 1500 },
+        "createdAt": { "type": "string", "maxLength": 64 },
+        "updatedAt": { "type": "string", "maxLength": 64 }
+      },
+      "required": ["id", "userId", "title"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User profile document"
+    },
+    "/users/{userId}/decisions/{decisionId}": {
+      "schema": "Decision",
+      "description": "User decisions and blind spot analyses"
+    }
+  }
+}

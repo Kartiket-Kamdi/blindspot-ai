@@ -1,0 +1,6 @@
+{
+  "name": "BlindSpot AI",
+  "description": "An AI-powered critical-thinking companion that helps you uncover hidden assumptions, overlooked factors, and critical questions before you make important decisions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
